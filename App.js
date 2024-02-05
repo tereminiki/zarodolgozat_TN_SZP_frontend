@@ -10,7 +10,7 @@ import Reszletek from "./Reszletek";
 import Videjo from "./Videjo";
 import Nevjegy from "./Nevjegy";
 import Keresesszoveg from "./Keresesszoveg";
-
+//sut a nap
 
 import Felvitel_2 from "./Felvitel_2"
 import Marka from "./Marka";
