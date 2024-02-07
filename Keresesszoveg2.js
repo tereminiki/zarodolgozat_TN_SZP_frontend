@@ -55,7 +55,7 @@ const Keresesszoveg2 = () => {
         defaultValue={text}
       />
       <Button
-        title='Keresés'
+        title='KeresÃ©s'
         onPress={()=>KeresFuggveny()}
       />
       {isLoading ? (

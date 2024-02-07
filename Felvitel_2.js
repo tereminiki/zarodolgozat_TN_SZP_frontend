@@ -48,7 +48,7 @@ export default function ImagePickerExample() {
   const handleUploadPhoto = async () => {
     try {
       if (!image) {
-        console.log('ElQszˆr v·lassz ki egy kÈpet');
+        console.log('El≈ësz√∂r v√°lassz ki egy k√©pet');
         return;
       }
 
@@ -91,9 +91,9 @@ export default function ImagePickerExample() {
     <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
       <Text style={{ padding: 10 }}></Text>
 
-      <Button title="V·lassz ki egy kÈpet a gallÈri·bÛl" onPress={pickImage} />
+      <Button title="V√°lassz ki egy k√©pet a gall√©ri√°b√≥l" onPress={pickImage} />
       {image && <Image source={{ uri: image.uri }} style={{ width: 200, height: 200 }} />}
-      <Button title="Tˆlsd fel kÈpet" onPress={handleUploadPhoto} />
+      <Button title="T≈ëlts fel k√©pet" onPress={handleUploadPhoto} />
 
       <View style={{ flex: 1, padding: 24 }}>
         <Picker

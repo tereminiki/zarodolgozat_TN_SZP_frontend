@@ -25,7 +25,7 @@ function HomeScreen({ navigation }) {
 
 function Root({ navigation }) {
   return (
-    <Drawer.Navigator initialRouteName="KezdQk�pernyQ" screenOptions={{
+    <Drawer.Navigator initialRouteName="Kezdőképernyő" screenOptions={{
       drawerStyle: {
         backgroundColor: '#502c49',
         width: 240,
@@ -35,13 +35,13 @@ function Root({ navigation }) {
       },
     }}
     >
-      <Drawer.Screen name="N�vjegy" component={Nevunk} />
-      <Drawer.Screen name="KezdQk�pernyQ" component={HomeScreen} />
-      <Drawer.Screen name="Aut� felt�lt�s" component={Felvitel_2} />
-      <Drawer.Screen name="M�rka" component={Marka} />
+      <Drawer.Screen name="Névjegy" component={Nevunk} />
+      <Drawer.Screen name="Kezdőképernyő" component={HomeScreen} />
+      <Drawer.Screen name="Autó feltöltős" component={Felvitel_2} />
+      <Drawer.Screen name="Márka" component={Marka} />
       <Drawer.Screen name="adatok" component={Kozos} />
       <Drawer.Screen name="Videjo" component={Videonk} />
-      <Drawer.Screen name="keres�s" component={Keresesszoveg2} />
+      <Drawer.Screen name="keresés" component={Keresesszoveg2} />
     </Drawer.Navigator>
   );
 }
