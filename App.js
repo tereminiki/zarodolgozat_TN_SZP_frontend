@@ -16,7 +16,6 @@ import Kozos from './Kozos';
 import Ujlap from "./Ujlap";
 import Keresesszoveg2 from "./Keresesszoveg2";
 
-
 function HomeScreen({ navigation }) {
   return (
     <ImageBackground
@@ -24,10 +23,8 @@ function HomeScreen({ navigation }) {
       style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}
     >
       <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
-        <Text style={{ color: 'white', fontSize: 24 }}>Üdvözöllek!</Text>
-        <TouchableOpacity onPress={() => navigation.navigate('Névjegy')}>
-          <Text style={{ color: 'white', fontSize: 18, marginTop: 10 }}>Névjegy</Text>
-        </TouchableOpacity>
+       
+        
       </View>
     </ImageBackground>
   );
