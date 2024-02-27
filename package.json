@@ -17,6 +17,7 @@
     "@babel/plugin-transform-optional-chaining": "^7.23.4",
     "@expo/webpack-config": "^19.0.0",
     "@react-native-picker/picker": "^2.4.10",
+    "@react-navigation/bottom-tabs": "^6.5.14",
     "@react-navigation/drawer": "^6.6.6",
     "@react-navigation/native": "^6.1.9",
     "@react-navigation/stack": "^6.3.20",

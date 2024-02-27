@@ -77,7 +77,7 @@ const styles = StyleSheet.create({
     width: '100%',
     height: 200,
     borderRadius: 8,
-    resizeMode: 'contain', // Hozz�adva a lev�g�s elker�l�s�hez
+    resizeMode: 'contain', 
   },
 
 

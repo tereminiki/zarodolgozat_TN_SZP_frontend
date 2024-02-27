@@ -29,20 +29,18 @@ const Reszletek = ({ route }) => {
 
   return (
     <View style={styles.container}>
-      
-      <Text>{atkuld2}</Text>
-      
-      <Image source={{ uri: Ipcim.Ipcim + atkuld3 }} style={{ width: 300, height: 300 }} />
-      
+
+      <Text style={{fontSize: 50, fontVariant: ['small-caps'], fontWeight: 'bold'}}>{atkuld2}</Text>
+      <Image source={{ uri: Ipcim.Ipcim}}/>
       <FlatList
           data={data}
           keyExtractor={({id}) => id}
           renderItem={({item}) => (
             <View>
-         
-            {
+            
+  {
             <Image source={{uri:Ipcim.Ipcim+item.motor_kep}} style={{width:300,height:300, margin:10}}   />
-            }
+  }
 
           </View>
       )}
