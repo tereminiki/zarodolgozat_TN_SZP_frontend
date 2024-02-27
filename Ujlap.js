@@ -14,7 +14,7 @@ const Ujlap = ({ route }) => {
 
   const fetchData = async () => {
     try {
-      var adatok = {
+      var adatok = { 
         "bevitel1": atkuld1
       };
       const response = await fetch(Ipcim.Ipcim + 'auto_kep', {
