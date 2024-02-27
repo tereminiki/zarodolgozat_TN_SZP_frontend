@@ -1,50 +1,55 @@
-import React, {useEffect, useState} from 'react';
-import { View, Text, StyleSheet, Image, FlatList} from 'react-native';
+import React, { useEffect, useState } from 'react';
+import { View, Text, StyleSheet, Image, FlatList, TouchableOpacity } from 'react-native';
 import Ipcim from './Ipcim';
+import Auto_adatok from './Auto_adatok';
 
 const Ujlap = ({ route }) => {
   const { atkuld1, atkuld2, atkuld3 } = route.params;
   const [data, setData] = useState([]);
+  const [selectedImage, setSelectedImage] = useState(null);
 
+  useEffect(() => {
+    fetchData();
+  }, []);
 
-
-  useEffect(async() => {
+  const fetchData = async () => {
     try {
-      var adatok ={
-        "bevitel1":atkuld1
-    }
-      const response = await fetch(Ipcim.Ipcim+'auto_kep', {
+      var adatok = {
+        "bevitel1": atkuld1
+      };
+      const response = await fetch(Ipcim.Ipcim + 'auto_kep', {
         method: "POST",
         body: JSON.stringify(adatok),
-        headers: {"Content-type": "application/json; charset=UTF-8"}
+        headers: { "Content-type": "application/json; charset=UTF-8" }
       });
       const json = await response.json();
       setData(json);
     } catch (error) {
       console.error(error);
-    } finally {
-      setLoading(false);
     }
-  }, []);
+  };
+
+  const openImageModal = (item) => {
+    setSelectedImage(item);
+  };
+
+  const closeImageModal = () => {
+    setSelectedImage(null);
+  };
 
   return (
     <View style={styles.container}>
-
-      <Text style={{fontSize: 50, fontVariant: ['small-caps'], fontWeight: 'bold'}}>{atkuld2}</Text>
-      <Image source={{ uri: Ipcim.Ipcim}}/>
+      <Text style={{ fontSize: 50, fontVariant: ['small-caps'], fontWeight: 'bold' }}>{atkuld2}</Text>
       <FlatList
-          data={data}
-          keyExtractor={({id}) => id}
-          renderItem={({item}) => (
-            <View>
-            
-  {
-            <Image source={{uri:Ipcim.Ipcim+item.auto_kep}} style={{width:300,height:300, margin:10}}   />
-  }
-
-          </View>
-      )}
+        data={data}
+        keyExtractor={({ id }) => id}
+        renderItem={({ item }) => (
+          <TouchableOpacity onPress={() => openImageModal(item)}>
+            <Image source={{ uri: Ipcim.Ipcim + item.auto_kep }} style={{ width: 300, height: 300, margin: 10 }} />
+          </TouchableOpacity>
+        )}
       />
+      {selectedImage && <Auto_adatok adatok={selectedImage} onClose={closeImageModal} />}
     </View>
   );
 };
@@ -54,7 +59,6 @@ const styles = StyleSheet.create({
     flex: 1,
     alignItems: 'center',
     justifyContent: 'center',
-
   },
 });
 
