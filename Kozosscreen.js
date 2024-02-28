@@ -23,7 +23,7 @@ const Kozosscreen = ({navigation}) => {
   }, []);
 
   return (
-    <View style={[styles.container, { backgroundColor: 'red' }]}>
+    <View style={[styles.container, { backgroundColor: 'gray' }]}>
       {isLoading ? (
         <ActivityIndicator />
       ) : (
@@ -61,7 +61,7 @@ const styles = StyleSheet.create({
   itemContainer: {
     marginBottom: 20,
     backgroundColor: '#f0f0f0',
-    borderRadius: 8,
+    borderRadius: 40,
     padding: 16,
     elevation: 4,
   },
