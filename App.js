@@ -45,15 +45,26 @@ function Root({ navigation }) {
     >
       <Drawer.Screen name="Névjegy" component={Nevjegy} />
       <Drawer.Screen name="Kezdőlap" component={HomeScreen} />
-      <Drawer.Screen name="Motor feltöltés" component={Felvitel} />
-      <Drawer.Screen name="Márka felsorolás" component={Marka_2} />
-      <Drawer.Screen name="Részletes leírás" component={Kozosscreen} />
-      <Drawer.Screen name="Videó" component={Videjo} />
-      <Drawer.Screen name="Szöveg alapján keresés" component={Keresesszoveg} />
+
       <Drawer.Screen name="Autó feltöltés" component={Felvitel_2} />
-      <Drawer.Screen name="Márka" component={Marka} />
-      <Drawer.Screen name="adatok" component={Kozos} />
-      <Drawer.Screen name="keresés" component={Keresesszoveg2} />
+      <Drawer.Screen name="Motor feltöltés" component={Felvitel} />
+
+      <Drawer.Screen name="Autó márkák felsorolása" component={Marka} />
+      <Drawer.Screen name="Motor márkák felsorolása" component={Marka_2} />
+
+      <Drawer.Screen name="Autó adatok" component={Kozos} />
+      <Drawer.Screen name="Motor adatok" component={Kozosscreen} />
+
+      <Drawer.Screen name="Autók közti keresés" component={Keresesszoveg2} />
+      <Drawer.Screen name="Motorok közti keresés" component={Keresesszoveg} />
+
+
+      <Drawer.Screen name="Videó fölösleges" component={Videjo} />
+
+
+
+
+
     </Drawer.Navigator>
   );
 }

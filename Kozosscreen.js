@@ -38,7 +38,7 @@ const Kozosscreen = ({navigation}) => {
               </View>
               <Button
             onPress={() => navigation.navigate('Ujlap',{atkuld1:item.marka_id,atkuld2:item.marka_nev,atkuld3:item.marka_kepek})}
-            title="Részletek"
+            title="Műszaki adatok"
             
           />
             </View>
