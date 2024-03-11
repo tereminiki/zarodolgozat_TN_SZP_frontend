@@ -3,15 +3,23 @@ import { Button, View, ImageBackground, Text, TouchableOpacity } from 'react-nat
 import { createDrawerNavigator } from '@react-navigation/drawer';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
+
 import MotorFelvitel from "./MotorFelvitel";
-import Marka_Motor from "./Marka_Motor";
-import MűszakiMotor from "./MűszakiMotor";
-import Nevjegy from "./Nevjegy";
-import KeresesMotor from "./KeresesMotor";
-import AutoFelvitel from "./AutoFelvitel"
-import Marka_Autok from './Marka_Autok';
+import AutoFelvitel from "./AutoFelvitel";
+
 import MűszakiAuto from "./MűszakiAuto";
+import MűszakiMotor from "./MűszakiMotor"
+
+import Nevjegy from "./Nevjegy";
+
+import KeresesMotor from "./KeresesMotor";
 import KeresesAuto from "./KeresesAuto";
+
+import Marka_Autok from './Marka_Autok';
+import Marka_Motor from "./Marka_Motor";
+
+
+
 
 function HomeScreen({ navigation }) {
   return (
@@ -28,7 +36,7 @@ function HomeScreen({ navigation }) {
 }
 
 
-function Root({ navigation }) {
+function Vissza({ navigation }) {
   return (
     <Drawer.Navigator initialRouteName="Kezdőlap" screenOptions={{
       drawerStyle: {
@@ -58,9 +66,6 @@ function Root({ navigation }) {
 
 
 
-
-
-
     </Drawer.Navigator>
   );
 }
@@ -73,7 +78,7 @@ export default function App() {
   return (
     <NavigationContainer>
       <Stack.Navigator>
-        <Stack.Screen name="Root" component={Root} options={{ headerShown: false }} />
+        <Stack.Screen name="Vissza" component={Vissza} options={{ headerShown: false }} />
         <Stack.Screen name="Műszaki adatok autók" component={MűszakiAuto} />
         <Stack.Screen name="Műszaki adatok motorok" component={MűszakiMotor} />
       </Stack.Navigator>
