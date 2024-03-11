@@ -1,14 +1,14 @@
 import React, {useEffect, useState} from 'react';
-import {ActivityIndicator, FlatList, Text, View, Button,Image,StyleSheet} from 'react-native';
+import {ActivityIndicator, FlatList, Text, View, Button ,Image, StyleSheet} from 'react-native';
 import Ipcim from './Ipcim';
 
-const Kozosscreen = ({navigation}) => {
+const Marka_Autok = ({navigation}) => {
   const [isLoading, setLoading] = useState(true);
   const [data, setData] = useState([]);
 
   const getMovies = async () => {
     try {
-      const response = await fetch(Ipcim.Ipcim+'marka_motorok');
+      const response = await fetch(Ipcim.Ipcim+'marka');
       const json = await response.json();
       setData(json);
     } catch (error) {
@@ -23,13 +23,13 @@ const Kozosscreen = ({navigation}) => {
   }, []);
 
   return (
-    <View style={[styles.container, { backgroundColor: 'gray' }]}>
+    <View style={[styles.container, { backgroundColor: 'red' }]}>
       {isLoading ? (
         <ActivityIndicator />
       ) : (
         <FlatList
           data={data}
-          keyExtractor={({marka_id}) => marka_id}
+          keyExtractor={({id}) => id}
           renderItem={({item}) => (
             <View style={styles.itemContainer}>
               <Text style={[styles.markaText, { textAlign: 'center' }]}>{item.marka_nev}</Text>
@@ -37,7 +37,7 @@ const Kozosscreen = ({navigation}) => {
                 <Image source={{ uri: Ipcim.Ipcim + item.marka_kepek }} style={styles.image} />
               </View>
               <Button
-            onPress={() => navigation.navigate('Ujlap',{atkuld1:item.marka_id,atkuld2:item.marka_nev,atkuld3:item.marka_kepek})}
+            onPress={() => navigation.navigate('Műszaki adatok autók',{atkuld1:item.marka_id,atkuld2:item.marka_nev,atkuld3:item.marka_kepek})}
             title="Műszaki adatok"
             
           />
@@ -61,7 +61,7 @@ const styles = StyleSheet.create({
   itemContainer: {
     marginBottom: 20,
     backgroundColor: '#f0f0f0',
-    borderRadius: 40,
+    borderRadius: 8,
     padding: 16,
     elevation: 4,
   },
@@ -77,7 +77,7 @@ const styles = StyleSheet.create({
     width: '100%',
     height: 200,
     borderRadius: 8,
-    resizeMode: 'contain', // Hozzáadva a levágás elkerüléséhez
+    resizeMode: 'contain', 
   },
 
 
@@ -85,5 +85,4 @@ const styles = StyleSheet.create({
 
 });
 
-export default Kozosscreen;
-
+export default Marka_Autok;

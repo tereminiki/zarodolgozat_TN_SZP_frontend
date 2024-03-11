@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from 'react';
 import { View, Text, StyleSheet, Image, FlatList, TouchableOpacity } from 'react-native';
 import Ipcim from './Ipcim';
-import Adatok from './Adatok';
+import Auto_adatok from './Auto_adatok';
 
-const Reszletek = ({ route }) => {
+const MűszakiAuto = ({ route }) => {
   const { atkuld1, atkuld2, atkuld3 } = route.params;
   const [data, setData] = useState([]);
   const [selectedImage, setSelectedImage] = useState(null);
@@ -17,7 +17,7 @@ const Reszletek = ({ route }) => {
       var adatok = {
         "bevitel1": atkuld1
       };
-      const response = await fetch(Ipcim.Ipcim + 'motor_kep', {
+      const response = await fetch(Ipcim.Ipcim + 'auto_kep', {
         method: "POST",
         body: JSON.stringify(adatok),
         headers: { "Content-type": "application/json; charset=UTF-8" }
@@ -40,9 +40,9 @@ const Reszletek = ({ route }) => {
   return (
     <View style={styles.container}>
        <View style={{ flexDirection: 'row', alignItems: 'center' }}>
-  <View style={{ flex: 1, borderBottomColor: 'green', borderBottomWidth: 5 }} />
-  <Text style={{ fontSize: 50, fontVariant: ['small-caps'], fontWeight: 'bold' }}>{atkuld2}</Text>
   <View style={{ flex: 1, borderBottomColor: 'red', borderBottomWidth: 5 }} />
+  <Text style={{ fontSize: 50, fontVariant: ['small-caps'], fontWeight: 'bold' }}>{atkuld2}</Text>
+  <View style={{ flex: 1, borderBottomColor: 'green', borderBottomWidth: 5 }} />
 </View>
 
 
@@ -51,7 +51,7 @@ const Reszletek = ({ route }) => {
         keyExtractor={({ id }) => id}
         renderItem={({ item }) => (
           <TouchableOpacity onPress={() => openImageModal(item)}>
-            <Image source={{ uri: Ipcim.Ipcim + item.motor_kep }} style={{
+            <Image source={{ uri: Ipcim.Ipcim + item.auto_kep }} style={{
                 width: 300,   // Kép szélessége 300 pixel
                 height: 300,  // Kép magassága 300 pixel
                 margin: 25,   // Külső térköz 25 pixel minden oldalon
@@ -68,7 +68,7 @@ const Reszletek = ({ route }) => {
           </TouchableOpacity>
         )}
       />
-      {selectedImage && <Adatok adatok={selectedImage} onClose={closeImageModal} />}
+      {selectedImage && <Auto_adatok adatok={selectedImage} onClose={closeImageModal} />}
     </View>
   );
 };
@@ -81,4 +81,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default Reszletek;
+export default MűszakiAuto;

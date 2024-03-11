@@ -3,18 +3,15 @@ import { Button, View, ImageBackground, Text, TouchableOpacity } from 'react-nat
 import { createDrawerNavigator } from '@react-navigation/drawer';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
-import Felvitel from "./Felvitel";
-import Marka_2 from "./Marka_2";
-import Kozosscreen from "./Kozosscreen";
-import Reszletek from "./Reszletek";
-import Videjo from "./Videjo";
+import MotorFelvitel from "./MotorFelvitel";
+import Marka_Motor from "./Marka_Motor";
+import MűszakiMotor from "./MűszakiMotor";
 import Nevjegy from "./Nevjegy";
-import Keresesszoveg from "./Keresesszoveg";
-import Felvitel_2 from "./Felvitel_2"
-import Marka from "./Marka";
-import Kozos from './Kozos';
-import Ujlap from "./Ujlap";
-import Keresesszoveg2 from "./Keresesszoveg2";
+import KeresesMotor from "./KeresesMotor";
+import AutoFelvitel from "./AutoFelvitel"
+import Marka_Autok from './Marka_Autok';
+import MűszakiAuto from "./MűszakiAuto";
+import KeresesAuto from "./KeresesAuto";
 
 function HomeScreen({ navigation }) {
   return (
@@ -46,20 +43,19 @@ function Root({ navigation }) {
       <Drawer.Screen name="Névjegy" component={Nevjegy} />
       <Drawer.Screen name="Kezdőlap" component={HomeScreen} />
 
-      <Drawer.Screen name="Autó feltöltés" component={Felvitel_2} />
-      <Drawer.Screen name="Motor feltöltés" component={Felvitel} />
-
-      <Drawer.Screen name="Autó márkák felsorolása" component={Marka} />
-      <Drawer.Screen name="Motor márkák felsorolása" component={Marka_2} />
-
-      <Drawer.Screen name="Autó adatok" component={Kozos} />
-      <Drawer.Screen name="Motor adatok" component={Kozosscreen} />
-
-      <Drawer.Screen name="Autók közti keresés" component={Keresesszoveg2} />
-      <Drawer.Screen name="Motorok közti keresés" component={Keresesszoveg} />
+      <Drawer.Screen name="Autó feltöltés" component={AutoFelvitel} />
+      <Drawer.Screen name="Motor feltöltés" component={MotorFelvitel} />
 
 
-      <Drawer.Screen name="Videó fölösleges" component={Videjo} />
+
+      <Drawer.Screen name="Autó adatok" component={Marka_Autok} />
+      <Drawer.Screen name="Motor adatok" component={Marka_Motor} />
+
+      <Drawer.Screen name="Autók közti keresés" component={KeresesAuto} />
+      <Drawer.Screen name="Motorok közti keresés" component={KeresesMotor} />
+
+
+
 
 
 
@@ -78,8 +74,8 @@ export default function App() {
     <NavigationContainer>
       <Stack.Navigator>
         <Stack.Screen name="Root" component={Root} options={{ headerShown: false }} />
-        <Stack.Screen name="Ujlap" component={Reszletek} />
-        <Stack.Screen name="Ujlap_Peti" component={Ujlap} />
+        <Stack.Screen name="Műszaki adatok autók" component={MűszakiAuto} />
+        <Stack.Screen name="Műszaki adatok motorok" component={MűszakiMotor} />
       </Stack.Navigator>
     </NavigationContainer>
   );

@@ -1,14 +1,14 @@
 import React, {useEffect, useState} from 'react';
-import {ActivityIndicator, FlatList, Text, View, Button ,Image, StyleSheet} from 'react-native';
+import {ActivityIndicator, FlatList, Text, View, Button,Image,StyleSheet} from 'react-native';
 import Ipcim from './Ipcim';
 
-const Kozos = ({navigation}) => {
+const Marka_Motor = ({navigation}) => {
   const [isLoading, setLoading] = useState(true);
   const [data, setData] = useState([]);
 
   const getMovies = async () => {
     try {
-      const response = await fetch(Ipcim.Ipcim+'marka');
+      const response = await fetch(Ipcim.Ipcim+'marka_motorok');
       const json = await response.json();
       setData(json);
     } catch (error) {
@@ -23,13 +23,13 @@ const Kozos = ({navigation}) => {
   }, []);
 
   return (
-    <View style={[styles.container, { backgroundColor: 'red' }]}>
+    <View style={[styles.container, { backgroundColor: 'gray' }]}>
       {isLoading ? (
         <ActivityIndicator />
       ) : (
         <FlatList
           data={data}
-          keyExtractor={({id}) => id}
+          keyExtractor={({marka_id}) => marka_id}
           renderItem={({item}) => (
             <View style={styles.itemContainer}>
               <Text style={[styles.markaText, { textAlign: 'center' }]}>{item.marka_nev}</Text>
@@ -37,7 +37,7 @@ const Kozos = ({navigation}) => {
                 <Image source={{ uri: Ipcim.Ipcim + item.marka_kepek }} style={styles.image} />
               </View>
               <Button
-            onPress={() => navigation.navigate('Ujlap_Peti',{atkuld1:item.marka_id,atkuld2:item.marka_nev,atkuld3:item.marka_kepek})}
+            onPress={() => navigation.navigate('Műszaki adatok motorok',{atkuld1:item.marka_id,atkuld2:item.marka_nev,atkuld3:item.marka_kepek})}
             title="Műszaki adatok"
             
           />
@@ -61,7 +61,7 @@ const styles = StyleSheet.create({
   itemContainer: {
     marginBottom: 20,
     backgroundColor: '#f0f0f0',
-    borderRadius: 8,
+    borderRadius: 40,
     padding: 16,
     elevation: 4,
   },
@@ -77,7 +77,7 @@ const styles = StyleSheet.create({
     width: '100%',
     height: 200,
     borderRadius: 8,
-    resizeMode: 'contain', 
+    resizeMode: 'contain', // Hozzáadva a levágás elkerüléséhez
   },
 
 
@@ -85,4 +85,5 @@ const styles = StyleSheet.create({
 
 });
 
-export default Kozos;
+export default Marka_Motor;
+
