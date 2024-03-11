@@ -1,14 +1,14 @@
-import React, {useEffect, useState} from 'react';
-import {ActivityIndicator, FlatList, Text, View, Button ,Image, StyleSheet} from 'react-native';
+import React, { useEffect, useState } from 'react';
+import { ActivityIndicator, FlatList, Text, View, Button, Image, StyleSheet } from 'react-native';
 import Ipcim from './Ipcim';
 
-const Marka_Autok = ({navigation}) => {
+const Marka_Autok = ({ navigation }) => {
   const [isLoading, setLoading] = useState(true);
   const [data, setData] = useState([]);
 
   const getMovies = async () => {
     try {
-      const response = await fetch(Ipcim.Ipcim+'marka');
+      const response = await fetch(Ipcim.Ipcim + 'marka');
       const json = await response.json();
       setData(json);
     } catch (error) {
@@ -23,24 +23,23 @@ const Marka_Autok = ({navigation}) => {
   }, []);
 
   return (
-    <View style={[styles.container, { backgroundColor: 'red' }]}>
+    <View style={[styles.container, { backgroundColor: 'lightblue' }]}>
       {isLoading ? (
         <ActivityIndicator />
       ) : (
         <FlatList
           data={data}
-          keyExtractor={({id}) => id}
-          renderItem={({item}) => (
+          keyExtractor={({ id }) => id}
+          renderItem={({ item }) => (
             <View style={styles.itemContainer}>
               <Text style={[styles.markaText, { textAlign: 'center' }]}>{item.marka_nev}</Text>
               <View style={styles.imageContainer}>
                 <Image source={{ uri: Ipcim.Ipcim + item.marka_kepek }} style={styles.image} />
               </View>
               <Button
-            onPress={() => navigation.navigate('Műszaki adatok autók',{atkuld1:item.marka_id,atkuld2:item.marka_nev,atkuld3:item.marka_kepek})}
-            title="Műszaki adatok"
-            
-          />
+                onPress={() => navigation.navigate('Műszaki adatok autók', { atkuld1: item.marka_id, atkuld2: item.marka_nev, atkuld3: item.marka_kepek })}
+                title="Műszaki adatok"
+              />
             </View>
           )}
         />
@@ -61,7 +60,7 @@ const styles = StyleSheet.create({
   itemContainer: {
     marginBottom: 20,
     backgroundColor: '#f0f0f0',
-    borderRadius: 8,
+    borderRadius: 40,
     padding: 16,
     elevation: 4,
   },
@@ -77,12 +76,8 @@ const styles = StyleSheet.create({
     width: '100%',
     height: 200,
     borderRadius: 8,
-    resizeMode: 'contain', 
+    resizeMode: 'contain',
   },
-
-
-
-
 });
 
 export default Marka_Autok;

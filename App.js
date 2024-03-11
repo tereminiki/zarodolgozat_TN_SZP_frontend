@@ -21,6 +21,8 @@ import Marka_Motor from "./Marka_Motor";
 
 
 
+
+
 function HomeScreen({ navigation }) {
   return (
     <ImageBackground
@@ -61,6 +63,8 @@ function Vissza({ navigation }) {
 
       <Drawer.Screen name="Autók közti keresés" component={KeresesAuto} />
       <Drawer.Screen name="Motorok közti keresés" component={KeresesMotor} />
+
+
 
 
 
