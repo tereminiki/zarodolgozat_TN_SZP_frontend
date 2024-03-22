@@ -93,7 +93,7 @@ export default function ImagePickerExample() {
 
       <Button title="Válassz ki egy képet a gallériából" onPress={pickImage} />
       {image && <Image source={{ uri: image.uri }} style={{ width: 200, height: 200 }} />}
-      <Button title="Tőlts fel képet" onPress={handleUploadPhoto} />
+      <Button title="Tölts fel képet" onPress={handleUploadPhoto} />
 
       <View style={{ flex: 1, padding: 24 }}>
         <Picker
