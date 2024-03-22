@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { View, Text, StyleSheet, Image, FlatList, TouchableOpacity } from 'react-native';
 import Ipcim from './Ipcim';
-import Adatok from './Adatok';
+import Motor_adatok from './Motor_adatok';
 
 const MűszakiMotor = ({ route }) => {
   const { atkuld1, atkuld2, atkuld3 } = route.params;
@@ -68,7 +68,7 @@ const MűszakiMotor = ({ route }) => {
           </TouchableOpacity>
         )}
       />
-      {selectedImage && <Adatok adatok={selectedImage} onClose={closeImageModal} />}
+      {selectedImage && <Motor_adatok adatok={selectedImage} onClose={closeImageModal} />}
     </View>
   );
 };

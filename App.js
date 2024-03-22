@@ -7,8 +7,8 @@ import { createStackNavigator } from '@react-navigation/stack';
 import MotorFelvitel from "./MotorFelvitel";
 import AutoFelvitel from "./AutoFelvitel";
 
-import MűszakiAuto from "./MűszakiAuto";
-import MűszakiMotor from "./MűszakiMotor"
+import MuszakiAuto from "./MuszakiAuto";
+import MuszakiMotor from "./MuszakiMotor"
 
 import Nevjegy from "./Nevjegy";
 
@@ -83,8 +83,8 @@ export default function App() {
     <NavigationContainer>
       <Stack.Navigator>
         <Stack.Screen name="Vissza" component={Vissza} options={{ headerShown: false }} />
-        <Stack.Screen name="Műszaki adatok autók" component={MűszakiAuto} />
-        <Stack.Screen name="Műszaki adatok motorok" component={MűszakiMotor} />
+        <Stack.Screen name="Műszaki adatok autók" component={MuszakiAuto} />
+        <Stack.Screen name="Műszaki adatok motorok" component={MuszakiMotor} />
       </Stack.Navigator>
     </NavigationContainer>
   );
