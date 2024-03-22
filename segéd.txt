@@ -1,6 +1,0 @@
-<ImageBackground
-    source={require('./Images/2.jpg')}
-    style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}
-  >
-
-  </ImageBackground>
