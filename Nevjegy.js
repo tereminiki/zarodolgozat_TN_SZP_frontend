@@ -6,9 +6,8 @@ export default function App() {
     <ImageBackground source={require('./Images/1.jpg')} style={styles.container}>
       <View style={styles.overlay}>
         <Text style={styles.name}>Teremi Nikoletta</Text>
-        <Text style={styles.details}>Szakdolgozatomról:</Text>
-        <Text style={styles.details}>- Részlet 1</Text>
-        <Text style={styles.details}>- Részlet 2</Text>
+        <View style={styles.separator}></View>
+        <Text style={styles.name}>Száraz Péter</Text>
       </View>
     </ImageBackground>
   );
@@ -23,7 +22,7 @@ const styles = StyleSheet.create({
     height: '100%',
   },
   overlay: {
-    backgroundColor: 'rgba(255, 255, 255, 0.8)', // Óvatosan állítsa be a háttér átlátszóságát
+    backgroundColor: 'rgba(255, 255, 255, 0.8)',
     padding: 20,
   },
   name: {
@@ -34,4 +33,12 @@ const styles = StyleSheet.create({
     fontSize: 18,
     marginVertical: 5,
   },
+  separator: {
+    borderBottomColor: 'black',
+    borderBottomWidth: 1,
+    marginVertical: 10,
+    width: '80%', // Csökkentjük a szélességet 80%-ra
+    alignSelf: 'center', // Középre igazítás
+  },
+  
 });
