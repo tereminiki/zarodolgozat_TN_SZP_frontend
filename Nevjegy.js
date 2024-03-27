@@ -32,7 +32,8 @@ export default function App() {
           <View style={styles.centeredView}>
             <View style={styles.modalView}>
               <Text style={styles.modalTitle}>Japán autók és motorok</Text>
-              <Text style={styles.modalText}>A szakdolgozatom fókuszában a japán autók és motorok online bemutatása áll. Az alkalmazás célja, hogy egy olyan online felületet hozzon létre, ahol a felhasználók kényelmesen felfedezhetik és megismerhetik a különböző márkákat és modelleket. Az inspiráció alapját a Használtautók weboldala adta, ahol minden adat könnyen elérhető és részletesen kereshető. Ebben az alkalmazásban azonban nem az eladásokra helyezzük a hangsúlyt, hanem inkább a járművek részletes bemutatására koncentrálunk.</Text>
+              <Text style={styles.modalText}>
+                  A szakdolgozatom célja egy online felület létrehozása, amely részletesen bemutatja a japán autókat és motorokat. Az alkalmazás inspirációja a Használtautók weboldala, azonban itt nem az eladásokra, hanem inkább a járművek részletes bemutatására összpontosítunk.</Text>
               <Button
                 title="Bezárás"
                 onPress={() => setModalVisible(false)}
@@ -74,12 +75,12 @@ const styles = StyleSheet.create({
     color: 'white',
     fontWeight: 'bold',
     fontSize: 20,
-    textAlign: 'center', // Középre igazítás
+    textAlign: 'center', 
   },
   name: {
     fontSize: 24,
     fontWeight: 'bold',
-    textAlign: 'center', // Középre igazítás
+    textAlign: 'center',
   },
   separator: {
     borderBottomColor: 'black',

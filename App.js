@@ -32,6 +32,7 @@ function HomeScreen({ navigation }) {
     >
       <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center', marginHorizontal: 20 }}>
         <Text style={styles.text}>Üdvözöllek a japán autók és motorok világában!</Text>
+
         <TouchableOpacity onPress={() => navigation.navigate('Névjegy')}>
           <Text style={styles.button}>Tovább a Névjegyhez</Text>
         </TouchableOpacity>
@@ -42,22 +43,27 @@ function HomeScreen({ navigation }) {
 
 const styles = StyleSheet.create({
   text: {
-    fontSize: 28,
+    fontSize: 32,
     fontWeight: 'bold',
     color: 'white',
     textAlign: 'center',
-    textShadowColor: 'rgba(0, 0, 0, 0.75)', // Árnyék színe
-    textShadowOffset: { width: 4, height: 4 }, // Árnyék elmozdulása (X, Y tengelyen)
-    textShadowRadius: 5, // Árnyék sugarának mérete
+    textShadowColor: 'rgba(0, 0, 255, 0.75)',
+    textShadowOffset: { width: 4, height: 4 },
+    textShadowRadius: 5, 
+    marginBottom: 40,
     
   },
   button: {
     fontSize: 20,
     color: 'white',
+    fontWeight: 'bold',
     marginTop: 20,
-    textShadowColor: 'rgba(0, 0, 0, 0.75)',
-    textShadowOffset: { width: 2, height: 2 },
+    textShadowColor: 'rgba(255, 0, 0, 0.75)',
+
+
+    textShadowOffset: { width: 4, height: 4 },
     textShadowRadius: 5,
+    marginTop: 10,
   }
 });
 
