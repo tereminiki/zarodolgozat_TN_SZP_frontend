@@ -33,7 +33,7 @@ export default function App() {
             <View style={styles.modalView}>
               <Text style={styles.modalTitle}>Japán autók és motorok</Text>
               <Text style={styles.modalText}>
-                  A szakdolgozatom célja egy online felület létrehozása, amely részletesen bemutatja a japán autókat és motorokat. Az alkalmazás inspirációja a Használtautók weboldala, azonban itt nem az eladásokra, hanem inkább a járművek részletes bemutatására összpontosítunk.</Text>
+                  A szakdolgozatunk célja egy online felület létrehozása, amely részletesen bemutatja a japán autókat és motorokat. Az alkalmazás inspirációja a Használtautók weboldala, azonban itt nem az eladásokra, hanem inkább a járművek részletes bemutatására összpontosítunk.</Text>
               <Button
                 title="Bezárás"
                 onPress={() => setModalVisible(false)}
