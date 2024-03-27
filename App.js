@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { Button, View, ImageBackground, Text, TouchableOpacity } from 'react-native';
+import { Button, View, ImageBackground, Text, TouchableOpacity,StyleSheet } from 'react-native';
 import { createDrawerNavigator } from '@react-navigation/drawer';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
@@ -26,16 +26,41 @@ import Marka_Motor from "./Marka_Motor";
 function HomeScreen({ navigation }) {
   return (
     <ImageBackground
-      source={require('./Images/ff.jpg')}
+      source={require('./Images/3.jpg')}
       style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}
+      blurRadius={3}
     >
-      <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
-       
-        
+      <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center', marginHorizontal: 20 }}>
+        <Text style={styles.text}>Üdvözöllek a japán autók és motorok világában!</Text>
+        <TouchableOpacity onPress={() => navigation.navigate('Névjegy')}>
+          <Text style={styles.button}>Tovább a Névjegyhez</Text>
+        </TouchableOpacity>
       </View>
     </ImageBackground>
   );
 }
+
+const styles = StyleSheet.create({
+  text: {
+    fontSize: 28,
+    fontWeight: 'bold',
+    color: 'white',
+    textAlign: 'center',
+    textShadowColor: 'rgba(0, 0, 0, 0.75)', // Árnyék színe
+    textShadowOffset: { width: 4, height: 4 }, // Árnyék elmozdulása (X, Y tengelyen)
+    textShadowRadius: 5, // Árnyék sugarának mérete
+    
+  },
+  button: {
+    fontSize: 20,
+    color: 'white',
+    marginTop: 20,
+    textShadowColor: 'rgba(0, 0, 0, 0.75)',
+    textShadowOffset: { width: 2, height: 2 },
+    textShadowRadius: 5,
+  }
+});
+
 
 
 function Vissza({ navigation }) {

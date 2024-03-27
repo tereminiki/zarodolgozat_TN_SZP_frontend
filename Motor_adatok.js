@@ -1,7 +1,7 @@
 import React from 'react';
 import { View, Text, Modal, TouchableOpacity, StyleSheet } from 'react-native';
 
-// Márka nevek objektuma a megfelelő számokhoz
+
 const markak = {
   1: 'Kawasaki',
   2: 'Honda',
@@ -10,7 +10,6 @@ const markak = {
 };
 
 const Adatok = ({ adatok, onClose }) => {
-  // Márka név kikeresése az objektumból a megfelelő szám alapján
   const markaNev = markak[adatok.motor_marka];
 
   return (

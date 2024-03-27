@@ -6,7 +6,7 @@ const KeresesAuto = () => {
   const [isLoading, setLoading] = useState(true);
   const [data, setData] = useState([]);
   const [text, setText] = useState('');
-  const [searched, setSearched] = useState(false); // Állapot a keresés gombra való kattintás nyomon követésére
+  const [searched, setSearched] = useState(false);
 
   const getMovies = async () => {
     try {
@@ -25,7 +25,7 @@ const KeresesAuto = () => {
   }, []);
 
   const Keresfuggveny = async () => {
-    setSearched(true); // Keresés gombra való kattintás jelzése
+    setSearched(true);
     var adatok = {
       "bevitel1": text
     };
@@ -46,17 +46,17 @@ const KeresesAuto = () => {
   };
 
   const renderSeparator = () => {
-    return searched && data.length > 0 ? ( // Vonal megjelenítése csak ha rányomtak a keresés gombra és találatok vannak
+    return searched && data.length > 0 ? (
       <View
         style={{
-          height: 2, // Vonal magassága
+          height: 2,
           width: "96%",
           backgroundColor: "#CED0CE",
-          marginTop: 15, // Vonal és a szöveg közötti térköz
-          marginBottom: 30, // Vonal és a következő szöveg közötti térköz
+          marginTop: 15,
+          marginBottom: 30,
         }}
       />
-    ) : null; // Ha nincs találat vagy nem kattintottak a keresés gombra, ne legyen vonal
+    ) : null;
   };
   
 
@@ -85,7 +85,7 @@ const KeresesAuto = () => {
                 <Image source={{ uri: Ipcim.Ipcim + item.auto_kep }} style={styles.image} />
               </View>
             )}
-            ItemSeparatorComponent={renderSeparator} // Vonal hozzáadása
+            ItemSeparatorComponent={renderSeparator}
           />
         ) : (
           <View style={styles.nincsTalalatContainer}>
@@ -108,8 +108,8 @@ const styles = StyleSheet.create({
     width: 330,
     height: 330,
     marginBottom: 30,
-    borderRadius: 10, // lekerekítés
-    resizeMode: 'cover', // teljes méretű megjelenítés, levágás nélkül
+    borderRadius: 10,
+    resizeMode: 'cover',
   },
   nincsTalalatContainer: {
     flex: 1,
@@ -117,8 +117,8 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
   nincsTalalatText: {
-    fontSize: 20, // nagyobb betűméret
-    color: 'red', // egyedi szín
+    fontSize: 20,
+    color: 'red',
     textAlign: 'center',
   },
 });
